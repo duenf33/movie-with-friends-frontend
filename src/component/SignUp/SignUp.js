@@ -91,12 +91,18 @@ export class SignUp extends Component {
 		}
 
 		try {
-			let result = await axios.post("http://localhost:3001/users/sign-up", {
+			let result = await Axios.post("/users/sign-up", {
 				firstName,
 				lastName,
 				email,
 				password,
 			});
+			// let result = await axios.post("http://localhost:3001/users/sign-up", {
+			// 	firstName,
+			// 	lastName,
+			// 	email,
+			// 	password,
+			// });
 
 			this.setState({
 				firstName: "",

@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import jwtDecode from "jwt-decode";
 import { checkIsUserLoggedIn } from "../lib/helpers";
+import Axios from "../lib/axios/Axios";
 
 export class Login extends Component {
 	state = {
@@ -26,7 +27,11 @@ export class Login extends Component {
 	handleLoginSubmit = async (event) => {
 		event.preventDefault();
 		try {
-			let result = await axios.post("http://localhost:3001/users/login", {
+			// let result = await axios.post("http://localhost:3001/users/login", {
+			// 	email: this.state.email,
+			// 	password: this.state.password,
+			// });
+			let result = await Axios.post("/users/login", {
 				email: this.state.email,
 				password: this.state.password,
 			});

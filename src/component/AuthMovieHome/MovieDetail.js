@@ -17,7 +17,7 @@ export class MovieDetail extends Component {
 	componentDidMount = async () => {
 		try {
 			let payload = await axios.get(
-				`http://omdbapi.com/?apikey=73c0f1fc&t=${this.props.match.params.title}&plot=full`
+				`${process.env.REACT_APP_API_URL}?apikey=${process.env.REACT_APP_API_KEY}&t=${this.props.match.params.title}&plot=full`
 			);
 
 			let jwtToken = localStorage.getItem("jwtToken");
@@ -101,7 +101,7 @@ export class MovieDetail extends Component {
 										className="btn btn-primary"
 										target="_blank"
 										rel="noreferrer"
-										href={`https://www.imdb.com/title/${this.state.movieInfo.imdbID}/`}>
+										href={`${process.env.REACT_APP_API_URL}title/${this.state.movieInfo.imdbID}/`}>
 										IMDB Link
 									</a>
 

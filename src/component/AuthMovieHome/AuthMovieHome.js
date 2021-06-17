@@ -24,7 +24,7 @@ export class AuthMovieHome extends Component {
 		});
 		try {
 			let movieData = await axios.get(
-				`http://omdbapi.com/?apikey=73c0f1fc&s=${randomTitle[randomSelectedTitle]}`,
+				`${process.env.REACT_APP_API_URL}?apikey=${process.env.REACT_APP_API_KEY}&s=${randomTitle[randomSelectedTitle]}`,
 				{
 					cancelToken: source.token,
 				}
@@ -69,7 +69,7 @@ export class AuthMovieHome extends Component {
 		});
 		try {
 			let movieData = await axios.get(
-				`http://omdbapi.com/?apikey=73c0f1fc&s=${this.state.movieInput}`
+				`${process.env.REACT_APP_API_URL}?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.movieInput}`
 			);
 			console.log(movieData);
 			if (movieData.data?.Response === "False") {
@@ -102,7 +102,7 @@ export class AuthMovieHome extends Component {
 			});
 			try {
 				let movieData = await axios.get(
-					`http://omdbapi.com/?apikey=73c0f1fc&s=${this.state.movieInput}`
+					`${process.env.REACT_APP_API_URL}?apikey=${process.env.REACT_APP_API_KEY}&s=${this.state.movieInput}`
 				);
 				if (movieData.data?.Response === "False") {
 					this.setState({

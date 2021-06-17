@@ -101,7 +101,7 @@ export class MovieDetail extends Component {
 										className="btn btn-primary"
 										target="_blank"
 										rel="noreferrer"
-										href={`${process.env.REACT_APP_API_URL}title/${this.state.movieInfo.imdbID}/`}>
+										href={`${process.env.REACT_APP_API_URL}title/${this.state.movieInfo.imdbID}`}>
 										IMDB Link
 									</a>
 

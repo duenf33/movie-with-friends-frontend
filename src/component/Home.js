@@ -19,6 +19,7 @@ export class Home extends Component {
 							<p>
 								<NavLink
 									className="btn btn-secondary"
+									target="_blank"
 									to="//calculator.fernandoduenas.com/">
 									Go to page »
 								</NavLink>
@@ -32,6 +33,7 @@ export class Home extends Component {
 							<p>
 								<NavLink
 									className="btn btn-secondary"
+									target="_blank"
 									to={"//mydolist.fernandoduenas.com"}>
 									Go to page »
 								</NavLink>
